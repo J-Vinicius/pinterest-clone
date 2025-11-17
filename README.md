@@ -1,75 +1,115 @@
-# Nuxt Minimal Starter
+# Pinterest Clone
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Um clone do Pinterest desenvolvido com Nuxt 3, integrando a API do Pexels para fornecer imagens de alta qualidade.
 
-## Setup
+## 🚀 Tecnologias
 
-Make sure to install dependencies:
+- **[Nuxt 3](https://nuxt.com/)** - Framework Vue.js para aplicações web
+- **[Vue 3](https://vuejs.org/)** - Framework JavaScript progressivo
+- **[ShadcnUI](https://www.shadcn-vue.com/)** - Componentes reutilizáveis para Vue
+- **[Tailwind CSS v4](https://tailwindcss.com/)** - Framework CSS utility-first
+- **[Pexels API](https://www.pexels.com/api/)** - API gratuita de imagens de alta qualidade
 
+## ✨ Funcionalidades
+
+- 📸 Galeria de imagens em estilo masonry (grid do Pinterest)
+- 🔍 Busca de imagens por palavras-chave
+- 🎨 Interface responsiva e moderna
+- ♾️ Scroll infinito para carregamento de mais imagens
+- 🖼️ Visualização detalhada de imagens
+- 💾 Navegação fluida entre páginas
+
+## 📋 Pré-requisitos
+
+- Node.js (versão 18 ou superior)
+- npm ou yarn
+- Chave de API do Pexels (gratuita)
+
+## 🔧 Instalação
+
+1. Clone o repositório:
 ```bash
-# npm
+git clone https://github.com/seu-usuario/pinterest-clone.git
+cd pinterest-clone
+```
+
+2. Instale as dependências:
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+3. Configure as variáveis de ambiente:
 ```bash
-# npm
+cp .env.example .env
+```
+
+4. Adicione sua chave da API do Pexels no arquivo `.env`:
+```env
+NUXT_PUBLIC_PEXELS_API_KEY=sua_chave_aqui
+```
+
+## 🎯 Como obter a API Key do Pexels
+
+1. Acesse [Pexels API](https://www.pexels.com/api/)
+2. Crie uma conta gratuita
+3. Gere sua chave de API
+4. Cole a chave no arquivo `.env`
+
+## 🚀 Uso
+
+### Desenvolvimento
+```bash
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+O projeto estará disponível em `http://localhost:3000`
 
-Build the application for production:
-
+### Build para produção
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
-
+### Preview da build de produção
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 📁 Estrutura do Projeto
+
+```
+pinterest-clone/
+├── components/         # Componentes Vue reutilizáveis
+│   └── ui/             # Componentes ShadcnUI
+├── pages/              # Páginas da aplicação
+├── composables/        # Composables do Vue
+├── assets/             # Arquivos estáticos (CSS, imagens)
+├── public/             # Arquivos públicos
+├── app.vue             # Componente raiz
+└── nuxt.config.ts      # Configuração do Nuxt
+```
+
+## 🎨 Componentes Principais
+
+- **Sidebar**: Sidebar
+- **ImageGrid**: Grid masonry para exibição das imagens
+- **SearchBar**: Barra de busca de imagens
+- **ImageCard**: Card individual de cada imagem
+- **ImageModal**: Modal para visualização detalhada
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
+
+## 👨‍💻 Autor
+
+Jorge Vinicius - [@J-Vinicius](https://github.com/J-Vinicius)
+
+## 🙏 Agradecimentos
+
+- [Pexels](https://www.pexels.com/) por fornecer a API gratuita de imagens.
+- [Nuxt](https://nuxt.com/) pela excelente documentação.
+- [ShadcnUI](https://www.shadcn-vue.com/) pelos componentes elegantes.
