@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { h, ref } from "vue";
 import {
-  BellRing,
-  BellRingIcon,
+  Bell,
   Compass,
   Folders,
-  Home,
   MessageSquare,
   Pin,
   PlusSquare,
@@ -21,6 +19,8 @@ import {
   type SidebarProps,
 } from "./ui/sidebar";
 import NavUser from "./NavUser.vue";
+import New from "./drawers/new.vue";
+import Updates from "./drawers/updates.vue";
 
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: "icon",
@@ -43,7 +43,7 @@ const menus = [
     isActive: false,
   },
   {
-    icon: BellRingIcon,
+    icon: Bell,
     title: "Updates",
     isActive: false,
   },
@@ -143,24 +143,8 @@ const { setOpen } = useSidebar();
           <SidebarTrigger />
         </div>
       </SidebarHeader>
-      <SidebarContent class="p-4">
-        <h2 class="text-xl font-medium">Inspire-se</h2>
-        <small class="text-xs text-muted-foreground">
-          17 de novembro de 2025
-        </small>
-        <ul class="space-y-2">
-          <li v-for="_ in 10" class="relative max-h-24 overflow-hidden">
-            <img
-              src="https://i.pinimg.com/736x/d0/de/24/d0de24af870e21f8b3d92c799e1955ed.jpg"
-              alt="Carrosel White and Black"
-              class="object-cover object-center opacity-75"
-            />
-            <div class="absolute bottom-2 inset-x-2">
-              <small>Fotografia e desenhos</small>
-              <h3>Preto e branco aesthetic</h3>
-            </div>
-          </li>
-        </ul>
+      <SidebarContent class="">
+        <Updates />
       </SidebarContent>
     </Sidebar>
   </Sidebar>
