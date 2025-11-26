@@ -1,7 +1,11 @@
 <script setup lang="ts"></script>
 <template>
-  <h2 class="text-xl font-medium">Inspire-se</h2>
-  <small class="text-xs text-muted-foreground"> 17 de novembro de 2025 </small>
+  <header class="p-2">
+    <h2 class="text-xl font-medium">Inspire-se</h2>
+    <small class="text-xs text-muted-foreground">
+      17 de novembro de 2025
+    </small>
+  </header>
   <ul class="space-y-2">
     <li v-for="_ in 10" class="relative max-h-24 overflow-hidden">
       <img

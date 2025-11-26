@@ -3,11 +3,11 @@ import { h, ref } from "vue";
 import {
   Bell,
   Compass,
-  Folders,
+  Folders as FoldersIcon,
   MessageSquare,
   Pin,
   PlusSquare,
-  Settings,
+  Settings as SettingsIcon,
 } from "lucide-vue-next";
 import {
   Sidebar,
@@ -20,36 +20,53 @@ import {
 } from "./ui/sidebar";
 import NavUser from "./NavUser.vue";
 import New from "./drawers/new.vue";
+
 import Updates from "./drawers/updates.vue";
+import Explore from "./drawers/explore.vue";
+import Folders from "./drawers/folders.vue";
+import Messages from "./drawers/messages.vue";
+import Settings from "./drawers/settings.vue";
 
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: "icon",
 });
 
+const settings = {
+  icon: SettingsIcon,
+  title: "Settings",
+  drawer: Settings,
+  isActive: false,
+};
+
 const menus = [
   {
     icon: Compass,
     title: "Explore",
+    drawer: Explore,
     isActive: false,
   },
   {
-    icon: Folders,
+    icon: FoldersIcon,
     title: "Folders",
+    drawer: Folders,
     isActive: false,
   },
   {
     icon: PlusSquare,
     title: "New",
+    drawer: New,
     isActive: false,
   },
   {
     icon: Bell,
     title: "Updates",
+    drawer: Updates,
     isActive: false,
   },
   {
     icon: MessageSquare,
     title: "Messages",
+    drawer: Messages,
     isActive: false,
   },
 ];
@@ -116,10 +133,18 @@ const { setOpen } = useSidebar();
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton
-                  class="px-2.5 md:px-2"
                   :tooltip="h('div', { hidden: false }, 'Settings')"
+                  :is-active="activeItem?.title === 'Settings'"
+                  class="px-2.5 md:px-2"
+                  @click="
+                    () => {
+                      activeItem = settings;
+                      setOpen(true);
+                    }
+                  "
                 >
-                  <Settings />
+                  <SettingsIcon />
+                  <span>Settings</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
@@ -143,8 +168,8 @@ const { setOpen } = useSidebar();
           <SidebarTrigger />
         </div>
       </SidebarHeader>
-      <SidebarContent class="">
-        <Updates />
+      <SidebarContent>
+        <component :is="activeItem?.drawer" />
       </SidebarContent>
     </Sidebar>
   </Sidebar>

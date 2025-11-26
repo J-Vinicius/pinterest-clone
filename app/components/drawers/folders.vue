@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <ul class="space-y-4">
+  <ul class="space-y-4 p-4">
     <li v-for="_ in 10" class="space-y-2">
       <div class="grid grid-cols-3 gap-0.5">
         <img

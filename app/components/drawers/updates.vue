@@ -6,57 +6,26 @@ import {
   ItemGroup,
   ItemMedia,
   ItemTitle,
-} from '@/components/ui/item'
-
-const music = [
-  {
-    title: 'Midnight City Lights',
-    artist: 'Neon Dreams',
-    album: 'Electric Nights',
-    duration: '3:45',
-  },
-  {
-    title: 'Coffee Shop Conversations',
-    artist: 'The Morning Brew',
-    album: 'Urban Stories',
-    duration: '4:05',
-  },
-  {
-    title: 'Digital Rain',
-    artist: 'Cyber Symphony',
-    album: 'Binary Beats',
-    duration: '3:30',
-  },
-]
+} from "@/components/ui/item";
+import { Search } from "lucide-vue-next";
 </script>
 
 <template>
   <div class="flex w-full max-w-md flex-col gap-6">
     <ItemGroup class="gap-4">
-      <Item
-        v-for="song in music"
-        :key="song.title"
-        as-child
-        role="listitem"
-      >
+      <Item v-for="_ in 10" :key="_" as-child role="listitem">
         <a href="#">
-          <ItemMedia variant="image">
-            <img
-              :src="`https://avatar.vercel.sh/${song.title}`"
-              :alt="song.title"
-              width="32"
-              height="32"
-              class="object-cover grayscale"
-            >
+          <ItemMedia variant="icon">
+            <Search />
           </ItemMedia>
           <ItemContent>
-            <ItemTitle class="line-clamp-1">
-              {{ song.title }} - <span class="text-muted-foreground">{{ song.album }}</span>
-            </ItemTitle>
-            <ItemDescription>{{ song.artist }}</ItemDescription>
+            <ItemTitle class="line-clamp-2"> Ainda está procurando? </ItemTitle>
+            <ItemDescription>
+              Explore ideias relacionadas a <b>Truque de Cartas</b>
+            </ItemDescription>
           </ItemContent>
           <ItemContent class="flex-none text-center">
-            <ItemDescription>{{ song.duration }}</ItemDescription>
+            <ItemDescription>2 sem</ItemDescription>
           </ItemContent>
         </a>
       </Item>

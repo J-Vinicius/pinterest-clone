@@ -6,7 +6,7 @@ import { SidebarInset, SidebarProvider } from "~/components/ui/sidebar";
 <template>
   <SidebarProvider
     :style="{
-      '--sidebar-width': '300px',
+      '--sidebar-width': '25rem',
     }"
   >
     <Sidebar />

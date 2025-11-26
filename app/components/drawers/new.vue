@@ -33,7 +33,7 @@ const newActions = [
 
 <template>
   <div class="flex w-full max-w-lg flex-col gap-6">
-    <Item v-for="action in newActions" variant="muted" class="hover:bg-muted cursor-pointer">
+    <Item v-for="action in newActions" variant="default" class="hover:bg-primary/50 cursor-pointer">
       <ItemMedia variant="icon">
         <component :is="action.icon" />
       </ItemMedia>
